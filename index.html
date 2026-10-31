@@ -1,0 +1,489 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rotaract Club | MS Engineering College</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    color: #26332e;
+    background: #f8faf9;
+    line-height: 1.6;
+}
+
+/* NAVBAR */
+header {
+    background: #103c32;
+    color: white;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 22px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #f4c542;
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    color: white;
+    border: none;
+    font-size: 26px;
+}
+
+/* HERO */
+.hero {
+    min-height: 520px;
+    background:
+    linear-gradient(90deg,
+    rgba(10,45,36,.9),
+    rgba(10,45,36,.35)),
+    url('https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=1600')
+    center/cover;
+    display: flex;
+    align-items: center;
+    padding: 8%;
+    color: white;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 6vw, 65px);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 25px;
+    background: #f4c542;
+    color: #173b30;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* COMMON SECTIONS */
+section {
+    padding: 75px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 34px;
+    color: #155746;
+}
+
+.section-title p {
+    color: #777;
+}
+
+/* ABOUT */
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.about h2 {
+    color: #155746;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+/* BLOG */
+.blog-container {
+    display: grid;
+    grid-template-columns:
+    repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.blog-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px #00000010;
+    transition: .3s;
+}
+
+.blog-card:hover {
+    transform: translateY(-7px);
+}
+
+.blog-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.blog-content {
+    padding: 22px;
+}
+
+.blog-content span {
+    color: #b68c12;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.blog-content h3 {
+    margin: 10px 0;
+    color: #155746;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 15px;
+    color: #155746;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* TEAM */
+.team-container {
+    display: grid;
+    grid-template-columns:
+    repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    text-align: center;
+}
+
+.team-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.team-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+/* GALLERY */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* CONTACT */
+.contact {
+    background: #eaf3ef;
+    text-align: center;
+}
+
+.contact h2 {
+    color: #155746;
+    margin-bottom: 15px;
+}
+
+/* FOOTER */
+footer {
+    background: #103c32;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+footer a {
+    color: #f4c542;
+    text-decoration: none;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+    nav {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: #103c32;
+        padding: 20px;
+    }
+
+    nav.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav a {
+        margin: 10px 0;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    section {
+        padding: 55px 6%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">ROTARACT MSCE</div>
+
+    <button class="menu-btn"
+    onclick="toggleMenu()">☰</button>
+
+    <nav id="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#blog">Blog</a>
+        <a href="#team">Team</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero" id="home">
+    <div class="hero-content">
+        <h1>Inspiring Change,<br>Creating Impact.</h1>
+
+        <p>
+        Welcome to the Rotaract Club of M.S. Engineering College.
+        A community of young leaders committed to service,
+        friendship and positive change.
+        </p>
+
+        <a href="#about" class="btn">Discover Our Club</a>
+    </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+    <div class="about">
+
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=900"
+        alt="Students working together">
+
+        <div>
+            <h2>Who We Are</h2>
+
+            <p>
+            Rotaract is a platform where young individuals
+            come together to develop leadership skills,
+            build friendships and serve their communities.
+            </p>
+
+            <br>
+
+            <p>
+            The Rotaract Club of M.S. Engineering College
+            aims to encourage students to become responsible
+            citizens and future leaders through meaningful
+            activities and community initiatives.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog">
+    <div class="section-title">
+        <h2>Our Latest Stories</h2>
+        <p>Explore our activities, events and experiences.</p>
+    </div>
+
+    <div class="blog-container">
+
+        <div class="blog-card">
+            <img src="https://images.unsplash.com/photo-1511497584788-876760111969?w=800">
+            <div class="blog-content">
+                <span>ENVIRONMENT</span>
+                <h3>Green Campus Initiative</h3>
+                <p>Encouraging environmental responsibility
+                through awareness and green activities.</p>
+                <a href="#contact" class="read-more">Read More →</a>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=800">
+            <div class="blog-content">
+                <span>COMMUNITY SERVICE</span>
+                <h3>Spreading Smiles</h3>
+                <p>Small acts of kindness can make a
+                meaningful difference in someone's life.</p>
+                <a href="#contact" class="read-more">Read More →</a>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800">
+            <div class="blog-content">
+                <span>STUDENT LIFE</span>
+                <h3>Building Young Leaders</h3>
+                <p>Developing confidence, teamwork and
+                leadership through student engagement.</p>
+                <a href="#contact" class="read-more">Read More →</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+    <div class="section-title">
+        <h2>Meet Our Team</h2>
+        <p>The people behind our journey.</p>
+    </div>
+
+    <div class="team-container">
+
+        <div class="team-card">
+            <img src="https://i.pravatar.cc/150?img=12">
+            <h3>Club President</h3>
+            <p>Leadership & Vision</p>
+        </div>
+
+        <div class="team-card">
+            <img src="https://i.pravatar.cc/150?img=47">
+            <h3>Club Secretary</h3>
+            <p>Planning & Coordination</p>
+        </div>
+
+        <div class="team-card">
+            <img src="https://i.pravatar.cc/150?img=33">
+            <h3>Club Members</h3>
+            <p>Service & Teamwork</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+    <div class="section-title">
+        <h2>Our Memories</h2>
+        <p>Moments that make our journey special.</p>
+    </div>
+
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600">
+        <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=600">
+        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600">
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600">
+        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600">
+        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600">
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <h2>Be Part of the Change!</h2>
+
+    <p>
+    Interested in joining our journey?
+    Connect with the Rotaract Club of MSCE.
+    </p>
+
+    <br>
+
+    <a href="mailto:rotaract@example.com" class="btn">
+        Contact Us
+    </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <h3>ROTARACT CLUB - MSCE</h3>
+
+    <p>Service Above Self</p>
+
+    <br>
+
+    <p>© 2026 Rotaract Club of M.S. Engineering College</p>
+
+    <p>Designed with ❤️ by MSCE Students</p>
+</footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById("navbar")
+    .classList.toggle("active");
+}
+
+document.querySelectorAll("#navbar a")
+.forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("navbar")
+        .classList.remove("active");
+    });
+});
+</script>
+
+</body>
+</html>
+ 
